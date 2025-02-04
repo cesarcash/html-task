@@ -1,0 +1,134 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts.css');
+
+:root {
+    --black: #21212d;
+    --gray: #2c2c38;
+    --light-gray: #838a9a;
+    --white: #f5f5f5;
+    --purple: #645fc6;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Regular';
+    color: var(--white);
+}
+
+.page {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 50px;
+    grid-template-areas: "aside content" "footer footer";
+}
+
+.aside {
+    grid-area: aside;
+    inline-size: 15.5rem;
+    block-size: calc(100vh - 50px);
+    background-color: var(--gray);
+    overflow: hidden;
+}
+
+.aside__container {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+    gap: 2rem;
+}
+
+.aside__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+    padding-inline-end: 1.25rem;
+    border-bottom: 1px solid var(--black);
+}
+
+.aside__icon {
+    font-size: 1.3rem;
+    padding-inline-start: 1.25rem;
+}
+
+.aside__menu--hidden {
+    display: none;
+}
+
+.aside__title {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.aside__profile {
+    inline-size: 1.5rem;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.aside__content {
+}
+
+.aside__footer {
+    margin-top: auto;
+}
+
+.menu {
+    color: var(--light-gray);
+}
+
+.menu__list {
+    margin: 0;
+    padding: 0 .5rem 0 0;
+
+}
+
+.menu__item {
+    list-style-type: none;
+    color: var(--light-gray);
+}
+
+.menu__link {
+    display: flex;
+    text-decoration: none;
+    padding: 1rem 1.25rem;
+    gap: 1.25rem;
+    align-items: center;
+    color: var(--light-gray);
+}
+
+.menu__link--isActive {
+    background-color: var(--purple);
+    color: var(--white);
+    position: relative;
+    /* clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); */
+    border-radius: 0px .75rem .75rem 0;
+}
+
+.menu__icon {
+    font-size: 1.3rem;
+}
+
+.main {
+    grid-area: content;
+    background-color: var(--black);
+}
+
+.main__container {
+    padding: 1.5rem;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__paragraph {
+    font-family: 'Open Bold';
+    margin: 0;
+    font-size: .9rem;
+}
